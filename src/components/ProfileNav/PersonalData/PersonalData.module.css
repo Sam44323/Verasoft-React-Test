@@ -1,0 +1,49 @@
+.personalDataContainer {
+  background-color: #edf5ff;
+  width: 239px;
+  height: 124.6px;
+  display: inline-block;
+  flex-direction: column;
+  margin-left: 5px;
+  text-align: center;
+  padding: 8.67px 0px 7.9px 12px;
+}
+
+.commonSectionStyles {
+  display: flex;
+  justify-items: center;
+  margin-bottom: 5.7px;
+}
+
+.personalDataContainer p {
+  margin-left: 28px;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.commonSectionStyles :last-child {
+  margin-bottom: 0px;
+}
+
+.numberSection {
+  margin-left: 2px;
+}
+
+.homeSection {
+  margin-left: -2px;
+}
+
+.emailSection {
+  margin-left: -1px;
+}
+
+.buildingSection > p,
+.emailSection > p,
+.userSection > p {
+  margin-left: 26px;
+}
+
+.homeSection > p {
+  margin-left: 24px;
+}

@@ -26,3 +26,8 @@
   border-radius: 4px;
   color: #fcfeff;
 }
+
+.fa-star {
+  stroke: black;
+  stroke-width: 10;
+}
