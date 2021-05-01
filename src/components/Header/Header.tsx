@@ -4,7 +4,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Header.module.css";
 
-const Header: React.FC = () => {
+const Header: React.FC<{ fName: string; lName: string }> = (props) => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.nameSection}>
@@ -13,7 +13,9 @@ const Header: React.FC = () => {
           style={{ width: "28px", height: "25px" }}
           color="white"
         />
-        <h1>Joseph Smith</h1>
+        <h1>
+          {props.fName} {props.lName}
+        </h1>
       </div>
       <button>New Order</button>
     </div>

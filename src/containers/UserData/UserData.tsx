@@ -4,6 +4,7 @@ import ProfilePic from "../../components/ProfileNav/ProfilePic/ProfilePic";
 import PersonalData from "../../components/ProfileNav/PersonalData/PersonalData";
 import ComActivity from "../../components/ProfileNav/ComActivity/ComActivity";
 import SMSCarrier from "../../components/ProfileNav/SMSCarrier/SMSCarrier";
+import Header from "../../components/Header/Header";
 
 const SUMMARY = {
   id: 12345678,
@@ -30,8 +31,15 @@ const SUMMARY = {
 const RootContainer: React.FC = () => {
   return (
     <>
-      <ProfilePic />
-      <PersonalData />
+      <Header fName={SUMMARY.first_name} lName={SUMMARY.last_name} />
+      <ProfilePic gender={SUMMARY.gender} />
+      <PersonalData
+        id={SUMMARY.id}
+        mob={SUMMARY.mobile_phone}
+        work={SUMMARY.work_phone}
+        home={SUMMARY.home_phone}
+        email={SUMMARY.email}
+      />
       <ComActivity />
       <SMSCarrier />
     </>

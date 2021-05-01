@@ -7,7 +7,6 @@ import UserData from "./containers/UserData/UserData";
 function App() {
   return (
     <>
-      <Header />
       <UserData />
     </>
   );

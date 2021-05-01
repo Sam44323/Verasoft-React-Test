@@ -4,7 +4,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./ProfilePic.module.css";
 
-const ProfilePic: React.FC = () => {
+const ProfilePic: React.FC<{ gender: string }> = (props) => {
   return (
     <div className={styles.profilePicContainer}>
       <FontAwesomeIcon
@@ -12,7 +12,7 @@ const ProfilePic: React.FC = () => {
         style={{ width: "63px", height: "72px" }}
         color="#EDF5FF"
       />
-      <p>MALE - 33</p>
+      <p>{props.gender.toUpperCase()} - 33</p>
     </div>
   );
 };
