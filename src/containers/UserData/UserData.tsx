@@ -1,6 +1,9 @@
 import React from "react";
 
-import styles from "./UserData.module.css";
+import ProfilePic from "../../components/ProfileNav/ProfilePic/ProfilePic";
+import PersonalData from "../../components/ProfileNav/PersonalData/PersonalData";
+import ComActivity from "../../components/ProfileNav/ComActivity/ComActivity";
+import SMSCarrier from "../../components/ProfileNav/SMSCarrier/SMSCarrier";
 
 const SUMMARY = {
   id: 12345678,
@@ -25,7 +28,14 @@ const SUMMARY = {
 };
 
 const RootContainer: React.FC = () => {
-  return <h1>Root Container</h1>;
+  return (
+    <>
+      <ProfilePic />
+      <PersonalData />
+      <ComActivity />
+      <SMSCarrier />
+    </>
+  );
 };
 
 export default RootContainer;

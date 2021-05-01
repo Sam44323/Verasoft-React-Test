@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import ProfileNav from "./components/ProfileNav/ProfileNav";
+import UserData from "./containers/UserData/UserData";
 
 function App() {
   return (
     <>
       <Header />
-      <ProfileNav />
+      <UserData />
     </>
   );
 }
