@@ -1,9 +1,10 @@
 .headerContainer {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #333333;
   padding: 20px 0 26px 0;
   align-items: center;
+  margin-bottom: 6.5px;
 }
 
 .nameSection > h1 {

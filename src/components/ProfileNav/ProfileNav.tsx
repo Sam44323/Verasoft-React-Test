@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./Profile.module.css";
+import styles from "./ProfileNav.module.css";
 
 import ProfilePic from "./ProfilePic/ProfilePic";
 import PersonData from "./PersonalData/PersonalData";
