@@ -1,9 +1,14 @@
 import React from "react";
 
 import styles from "./OrderContainer.module.css";
+import OrderNav from "../../components/OrderCategory/OrderNav/OrderNav";
 
 const OrderContainer: React.FC = () => {
-  return <h1>Order Container</h1>;
+  return (
+    <>
+      <OrderNav />
+    </>
+  );
 };
 
 export default OrderContainer;
