@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./ComActivity.module.css";
 
-const ComActivity: React.FC = () => {
+const ComActivity: React.FC = (props) => {
   return (
     <div className={styles.comContainer}>
       <h1 className={styles.comHeading}>90-DAY COMMUNICATION ACTIVITY</h1>
