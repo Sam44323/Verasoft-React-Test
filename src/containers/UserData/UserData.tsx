@@ -23,7 +23,10 @@ const SUMMARY = {
     orders: 1,
   },
   carrier_status: {
-    since: "2006-06-02T21:00:00.000Z",
+    since: new Date("2006-06-02T21:00:00.000Z")
+      .toString()
+      .split(" ")
+      .slice(1, 4),
     status: "IN",
   },
 };
@@ -45,12 +48,7 @@ const RootContainer: React.FC = () => {
         email={SUMMARY.activity.email}
         orders={SUMMARY.activity.orders}
       />
-      <SMSCarrier
-        data={new Date(SUMMARY.carrier_status.since)
-          .toString()
-          .split(" ")
-          .slice(1, 4)}
-      />
+      <SMSCarrier data={SUMMARY.carrier_status.since} />
     </>
   );
 };
