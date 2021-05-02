@@ -1,0 +1,65 @@
+.sentContainer {
+  display: grid;
+  column-gap: 24px;
+}
+
+.detailSection,
+.gridFirst,
+.gridSecond {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.gridFirst .detailSection:last-child {
+  margin-left: 65px;
+}
+
+.detailSection h1 {
+  font-size: 16px;
+  color: #333333;
+  font-family: "Open Sans";
+  font-weight: 300;
+}
+
+.gridFirst {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.gridSecond {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.gridSecond h1 {
+  font-size: 14px;
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.gridSecond h1:last-of-type {
+  margin-right: 0px;
+  margin-left: 40px;
+}
+
+.gridSecond button {
+  display: inline-block;
+  width: 88px;
+  height: 28px;
+  background-color: #7d869a;
+  outline: 0px;
+  border: 0px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: white;
+}
+
+.detailSection p {
+  font-family: "Open Sans";
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 300;
+}
