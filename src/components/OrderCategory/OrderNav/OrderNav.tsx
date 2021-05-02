@@ -3,7 +3,11 @@ import React from "react";
 import styles from "./OrderNav.module.css";
 
 const OrderNav: React.FC = () => {
-  return <h1>Order Nav</h1>;
+  return (
+    <div className={styles.orderNavContainer}>
+      <div className={styles.navSection}></div>
+    </div>
+  );
 };
 
 export default OrderNav;
