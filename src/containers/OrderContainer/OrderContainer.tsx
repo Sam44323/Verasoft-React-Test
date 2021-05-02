@@ -1,6 +1,5 @@
 import React from "react";
 
-import styles from "./OrderContainer.module.css";
 import OrderNav from "../../components/OrderCategory/OrderNav/OrderNav";
 import OrderSectionNav from "../../components/OrderCategory/OrdersSection/OrderSectionNav/OrderSectionNav";
 import OrderColHeadings from "../../components/OrderCategory/OrdersSection/OrderColHeadings/OrderColHeadings";
