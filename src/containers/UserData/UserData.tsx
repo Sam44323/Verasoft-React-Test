@@ -45,7 +45,12 @@ const RootContainer: React.FC = () => {
         email={SUMMARY.activity.email}
         orders={SUMMARY.activity.orders}
       />
-      <SMSCarrier />
+      <SMSCarrier
+        data={new Date(SUMMARY.carrier_status.since)
+          .toString()
+          .split(" ")
+          .slice(1, 4)}
+      />
     </>
   );
 };
