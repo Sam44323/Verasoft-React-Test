@@ -2,7 +2,8 @@
   width: 559px;
   height: 125px;
   display: inline-block;
-  position: absolute;
+  position: relative;
+  bottom: 34px;
   margin-left: 5px;
   font-family: "Open Sans";
 }

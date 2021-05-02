@@ -1,0 +1,14 @@
+.smsContainer {
+  background-color: #edffed;
+  width: 225px;
+  height: 125px;
+  display: inline-block;
+}
+
+.smsContainer > h1 {
+  font-size: 12px;
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: lighter;
+  padding-top: 7px;
+}

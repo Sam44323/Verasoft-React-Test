@@ -40,7 +40,11 @@ const RootContainer: React.FC = () => {
         home={SUMMARY.home_phone}
         email={SUMMARY.email}
       />
-      <ComActivity />
+      <ComActivity
+        sms={SUMMARY.activity.sms}
+        email={SUMMARY.activity.email}
+        orders={SUMMARY.activity.orders}
+      />
       <SMSCarrier />
     </>
   );
