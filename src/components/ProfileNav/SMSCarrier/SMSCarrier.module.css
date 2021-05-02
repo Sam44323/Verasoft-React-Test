@@ -3,12 +3,29 @@
   width: 225px;
   height: 125px;
   display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: 1px;
+  font-family: "Open Sans";
 }
 
 .smsContainer > h1 {
   font-size: 12px;
   text-align: center;
-  font-family: "Open Sans";
   font-weight: lighter;
-  padding-top: 7px;
+}
+
+.dataContainer h1 {
+  font-weight: 600;
+  font-size: 49px;
+  text-align: center;
+}
+
+.dataContainer p {
+  font-size: 10px;
+  font-weight: lighter;
+  text-align: center;
+  padding: 5px 69px 5px 70px;
+  margin-top: 18px;
+  background-color: rgb(51, 51, 51, 0.1);
 }
