@@ -1,0 +1,42 @@
+.comContainer {
+  width: 559px;
+  height: 125px;
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  font-family: "Open Sans";
+}
+
+.comHeading {
+  background-color: #edf5ff;
+  width: 559px;
+  height: 30px;
+  padding: 7px 0 6px 0;
+  font-size: 12px;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.comDetails {
+  display: flex;
+}
+
+.details {
+  background-color: #edf5ff;
+  width: 185px;
+  height: 95px;
+  text-align: center;
+  margin-right: 2px;
+}
+
+.details > h1 {
+  font-size: 49px;
+}
+
+.details > p {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 3px;
+  padding: 5px 77px 5px 76px;
+  background-color: #d6dce5;
+}
