@@ -1,0 +1,30 @@
+.orderSectionNavContainer {
+  display: flex;
+  align-items: center;
+  background-color: #7d869a;
+  margin-top: 2.67px;
+  padding: 9px 0px;
+}
+
+.buttonSection button {
+  padding: 6px 20px;
+  font-size: 10px;
+  border-radius: 11px;
+  background-color: #7d869a;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+}
+
+.buttonSection button:focus {
+  background-color: white;
+}
+
+.orderSectionNavContainer h1 {
+  font-size: 16px;
+  text-align: center;
+  margin-left: 340px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  color: white;
+}
