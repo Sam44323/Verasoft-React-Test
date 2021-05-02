@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./UserData.module.css";
+
 import ProfilePic from "../../components/ProfileNav/ProfilePic/ProfilePic";
 import PersonalData from "../../components/ProfileNav/PersonalData/PersonalData";
 import ComActivity from "../../components/ProfileNav/ComActivity/ComActivity";
@@ -35,20 +37,22 @@ const RootContainer: React.FC = () => {
   return (
     <>
       <Header fName={SUMMARY.first_name} lName={SUMMARY.last_name} />
-      <ProfilePic gender={SUMMARY.gender} />
-      <PersonalData
-        id={SUMMARY.id}
-        mob={SUMMARY.mobile_phone}
-        work={SUMMARY.work_phone}
-        home={SUMMARY.home_phone}
-        email={SUMMARY.email}
-      />
-      <ComActivity
-        sms={SUMMARY.activity.sms}
-        email={SUMMARY.activity.email}
-        orders={SUMMARY.activity.orders}
-      />
-      <SMSCarrier data={SUMMARY.carrier_status.since} />
+      <div className={styles.UserDataNavContainer}>
+        <ProfilePic gender={SUMMARY.gender} />
+        <PersonalData
+          id={SUMMARY.id}
+          mob={SUMMARY.mobile_phone}
+          work={SUMMARY.work_phone}
+          home={SUMMARY.home_phone}
+          email={SUMMARY.email}
+        />
+        <ComActivity
+          sms={SUMMARY.activity.sms}
+          email={SUMMARY.activity.email}
+          orders={SUMMARY.activity.orders}
+        />
+        <SMSCarrier data={SUMMARY.carrier_status.since} />
+      </div>
     </>
   );
 };

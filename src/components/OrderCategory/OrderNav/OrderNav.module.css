@@ -1,8 +1,6 @@
 .orderNavContainer {
   background-color: #f2f2f2;
   padding: 40px 151px 0px 151px;
-  position: relative;
-  bottom: 30px;
   border-bottom: 2px solid #4d4d4d;
   border-top: 2px solid rgb(77, 77, 77, 0.1);
 }
