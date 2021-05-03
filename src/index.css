@@ -17,6 +17,17 @@ body {
 }
 
 .fa-user {
+  color: #edf5ff;
   stroke: white;
+  stroke-width: 35;
+}
+
+.fa-mobile,
+.fa-building,
+.fa-home,
+.fa-user-alt,
+.fa-email {
+  color: #edf5ff;
+  stroke: #b0c6d8;
   stroke-width: 35;
 }

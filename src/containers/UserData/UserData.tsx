@@ -11,28 +11,28 @@ import SMSCarrier from "../../components/ProfileNav/SMSCarrier/SMSCarrier";
 import Header from "../../components/Header/Header";
 
 const RootContainer: React.FC = () => {
-  const summary = useSelector<StateInterface, SummaryInterface[]>(
+  const summary = useSelector<StateInterface, SummaryInterface>(
     (state) => state.summary
   );
   return (
     <>
-      <Header fName={summary[0].first_name} lName={summary[0].last_name} />
+      <Header fName={summary.first_name} lName={summary.last_name} />
       <div className={styles.UserDataNavContainer}>
-        <ProfilePic gender={summary[0].gender} />
+        <ProfilePic gender={summary.gender} />
         <PersonalData
-          id={summary[0].id}
-          mob={summary[0].mobile_phone}
-          work={summary[0].work_phone}
-          home={summary[0].home_phone}
-          email={summary[0].email}
+          id={summary.id}
+          mob={summary.mobile_phone}
+          work={summary.work_phone}
+          home={summary.home_phone}
+          email={summary.email}
         />
         <ComActivity
-          sms={summary[0].activity.sms}
-          email={summary[0].activity.email}
-          orders={summary[0].activity.orders}
+          sms={summary.activity.sms}
+          email={summary.activity.email}
+          orders={summary.activity.orders}
         />
         <SMSCarrier
-          data={new Date(summary[0].carrier_status.since)
+          data={new Date(summary.carrier_status.since)
             .toString()
             .split(" ")
             .slice(1, 4)}

@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUser,
+  faUserAlt,
   faMobile,
   faBuilding,
   faHome,
@@ -20,7 +20,11 @@ const PersonalData: React.FC<{
   return (
     <div className={styles.personalDataContainer}>
       <div className={`${styles.userSection} ${styles.commonSectionStyles}`}>
-        <FontAwesomeIcon icon={faUser} color="#B0C6D8" />
+        <FontAwesomeIcon
+          icon={faUserAlt}
+          color="#B0C6D8"
+          className="common-user"
+        />
         <p>#{props.id}</p>
       </div>
       <div className={`${styles.numberSection} ${styles.commonSectionStyles}`}>

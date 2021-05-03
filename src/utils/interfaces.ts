@@ -43,7 +43,7 @@ interface Orders {
 }
 
 export interface StateInterface {
-  summary: SummaryInterface[];
+  summary: SummaryInterface;
   orders: Orders;
   error: string;
   currentOrderNav: string;
