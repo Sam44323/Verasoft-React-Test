@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import OrderNav from "../../components/OrderCategory/OrderNav/OrderNav";
 import OrderSectionNav from "../../components/OrderCategory/OrdersSection/OrderSectionNav/OrderSectionNav";
@@ -36,8 +36,8 @@ const ORDERS = {
 };
 
 const OrderContainer: React.FC = () => {
-  const orderValue = useSelector<StateInterface, { name: string; btn: string }>(
-    (state) => ({ name: state.currentOrderNav, btn: state.currentOrderBtn })
+  const orderValue = useSelector<StateInterface, StateInterface>(
+    (state) => state
   );
   console.log(orderValue);
   return (
@@ -61,10 +61,4 @@ const OrderContainer: React.FC = () => {
   );
 };
 
-const mapStateToProps = (state: StateInterface) => {
-  return {
-    value: state,
-  };
-};
-
-export default connect(mapStateToProps, null)(OrderContainer);
+export default OrderContainer;
