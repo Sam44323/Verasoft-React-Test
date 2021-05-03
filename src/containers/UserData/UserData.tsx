@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { StateInterface, SummaryInterface } from "../../utils/interfaces";
 
 import styles from "./UserData.module.css";
