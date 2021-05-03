@@ -1,10 +1,12 @@
 import React from "react";
+import { connect, useSelector } from "react-redux";
 
 import OrderNav from "../../components/OrderCategory/OrderNav/OrderNav";
 import OrderSectionNav from "../../components/OrderCategory/OrdersSection/OrderSectionNav/OrderSectionNav";
 import OrderColHeadings from "../../components/OrderCategory/OrdersSection/OrderColHeadings/OrderColHeadings";
 import Sent from "../../components/OrderCategory/OrdersSection/Sent/OrderData/OrderData";
 import Error from "../../components/OrderCategory/OrdersSection/Error/OrderData/OrderData";
+import { StateInterface } from "../../utils/interfaces";
 
 const ORDERS = {
   sent: [
@@ -34,6 +36,10 @@ const ORDERS = {
 };
 
 const OrderContainer: React.FC = () => {
+  const orderValue = useSelector<StateInterface, string>(
+    (state) => state.currentOrderNav
+  );
+  console.log(orderValue);
   return (
     <>
       <OrderNav />
@@ -55,4 +61,10 @@ const OrderContainer: React.FC = () => {
   );
 };
 
-export default OrderContainer;
+const mapStateToProps = (state: StateInterface) => {
+  return {
+    value: state,
+  };
+};
+
+export default connect(mapStateToProps, null)(OrderContainer);

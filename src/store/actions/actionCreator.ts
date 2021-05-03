@@ -1,8 +1,9 @@
 import * as actionTypes from "./actionTypes";
 
-export const fetchOrderSummary = () => {
+export const fetchOrderSummary = (ordertype: string) => {
   return {
     type: actionTypes.FETCH_ORDER_SUMMARY,
+    order: ordertype,
   };
 };
 

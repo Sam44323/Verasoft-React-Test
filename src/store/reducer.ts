@@ -55,7 +55,7 @@ const reducer = (
 ): StateInterface => {
   switch (actions.type) {
     case actionTypes.FETCH_ORDER_SUMMARY:
-      return { ...state };
+      return { ...state, currentOrderNav: actions.order as string };
 
     case actionTypes.FETCH_USER_SUMMARY:
       return { ...state };

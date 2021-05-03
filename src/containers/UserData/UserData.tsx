@@ -42,10 +42,4 @@ const RootContainer: React.FC = () => {
   );
 };
 
-const mapStateToProps = (state: StateInterface) => {
-  return {
-    value: state,
-  };
-};
-
-export default connect(mapStateToProps, null)(RootContainer);
+export default RootContainer;
