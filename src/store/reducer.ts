@@ -4,24 +4,24 @@ import * as actionTypes from "./actions/actionTypes";
 const initialState: StateInterface = {
   summary: [
     {
-      id: 1,
-      first_name: "",
-      last_name: "",
+      id: 12345678,
+      first_name: "Joseph",
+      last_name: "Smith",
       photo_url: "",
-      gender: "",
-      birth_date: "",
-      home_phone: "",
-      mobile_phone: "",
-      work_phone: "",
-      email: "",
+      gender: "male",
+      birth_date: "1975-06-18",
+      home_phone: "248-555-1000",
+      mobile_phone: "248-555-3000",
+      work_phone: "248-555-2000",
+      email: "joe.smith@testemail.com",
       activity: {
-        sms: 0,
-        email: 0,
-        orders: 0,
+        sms: 6,
+        email: 4,
+        orders: 1,
       },
       carrier_status: {
-        since: "",
-        status: "",
+        since: "2006-06-02T21:00:00.000Z",
+        status: "IN",
       },
     },
   ],
@@ -47,17 +47,24 @@ const initialState: StateInterface = {
     orders_C: [],
   },
   error: "",
+  currentOrderNav: "ORDER A",
+  currentOrderBtn: "SENT",
 };
 
-const reducer = (state = initialState, actions: ActionInterface) => {
+const reducer = (
+  state: StateInterface = initialState,
+  actions: ActionInterface
+): StateInterface => {
   switch (actions.type) {
     case actionTypes.FETCH_ORDER_SUMMARY:
-      break;
+      return { ...state };
 
     case actionTypes.FETCH_USER_SUMMARY:
-      break;
+      return { ...state };
 
     default:
-      return state;
+      return { ...state };
   }
 };
+
+export default reducer;

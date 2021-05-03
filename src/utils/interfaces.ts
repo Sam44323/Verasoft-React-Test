@@ -1,4 +1,4 @@
-interface SummaryInterface {
+export interface SummaryInterface {
   id: number;
   first_name: string;
   last_name: string;
@@ -46,6 +46,8 @@ export interface StateInterface {
   summary: SummaryInterface[];
   orders: Orders;
   error: string;
+  currentOrderNav: string;
+  currentOrderBtn: string;
 }
 
 export interface ActionInterface {

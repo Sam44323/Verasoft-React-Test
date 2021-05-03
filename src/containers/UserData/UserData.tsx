@@ -1,4 +1,6 @@
 import React from "react";
+import { connect, useSelector } from "react-redux";
+import { StateInterface, SummaryInterface } from "../../utils/interfaces";
 
 import styles from "./UserData.module.css";
 
@@ -8,53 +10,42 @@ import ComActivity from "../../components/ProfileNav/ComActivity/ComActivity";
 import SMSCarrier from "../../components/ProfileNav/SMSCarrier/SMSCarrier";
 import Header from "../../components/Header/Header";
 
-const SUMMARY = {
-  id: 12345678,
-  first_name: "Joseph",
-  last_name: "Smith",
-  photo_url: null,
-  gender: "male",
-  birth_date: "1975-06-18",
-  home_phone: "248-555-1000",
-  mobile_phone: "248-555-3000",
-  work_phone: "248-555-2000",
-  email: "joe.smith@testemail.com",
-  activity: {
-    sms: 6,
-    email: 4,
-    orders: 1,
-  },
-  carrier_status: {
-    since: new Date("2006-06-02T21:00:00.000Z")
-      .toString()
-      .split(" ")
-      .slice(1, 4),
-    status: "IN",
-  },
-};
-
 const RootContainer: React.FC = () => {
+  const summary = useSelector<StateInterface, SummaryInterface[]>(
+    (state) => state.summary
+  );
   return (
     <>
-      <Header fName={SUMMARY.first_name} lName={SUMMARY.last_name} />
+      <Header fName={summary[0].first_name} lName={summary[0].last_name} />
       <div className={styles.UserDataNavContainer}>
-        <ProfilePic gender={SUMMARY.gender} />
+        <ProfilePic gender={summary[0].gender} />
         <PersonalData
-          id={SUMMARY.id}
-          mob={SUMMARY.mobile_phone}
-          work={SUMMARY.work_phone}
-          home={SUMMARY.home_phone}
-          email={SUMMARY.email}
+          id={summary[0].id}
+          mob={summary[0].mobile_phone}
+          work={summary[0].work_phone}
+          home={summary[0].home_phone}
+          email={summary[0].email}
         />
         <ComActivity
-          sms={SUMMARY.activity.sms}
-          email={SUMMARY.activity.email}
-          orders={SUMMARY.activity.orders}
+          sms={summary[0].activity.sms}
+          email={summary[0].activity.email}
+          orders={summary[0].activity.orders}
         />
-        <SMSCarrier data={SUMMARY.carrier_status.since} />
+        <SMSCarrier
+          data={new Date(summary[0].carrier_status.since)
+            .toString()
+            .split(" ")
+            .slice(1, 4)}
+        />
       </div>
     </>
   );
 };
 
-export default RootContainer;
+const mapStateToProps = (state: StateInterface) => {
+  return {
+    value: state,
+  };
+};
+
+export default connect(mapStateToProps, null)(RootContainer);
