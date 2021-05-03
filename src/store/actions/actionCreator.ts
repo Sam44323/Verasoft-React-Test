@@ -12,3 +12,10 @@ export const fetchUserSummary = () => {
     type: actionTypes.FETCH_USER_SUMMARY,
   };
 };
+
+export const toggleOrderBtn = (btnName: string) => {
+  return {
+    type: actionTypes.TOGGLE_ORDER_BTN,
+    btnName: btnName,
+  };
+};

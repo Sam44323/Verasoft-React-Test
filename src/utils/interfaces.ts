@@ -53,4 +53,5 @@ export interface StateInterface {
 export interface ActionInterface {
   type: string;
   order?: string;
+  btnName?: string;
 }

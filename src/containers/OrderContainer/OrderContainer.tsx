@@ -36,8 +36,8 @@ const ORDERS = {
 };
 
 const OrderContainer: React.FC = () => {
-  const orderValue = useSelector<StateInterface, string>(
-    (state) => state.currentOrderNav
+  const orderValue = useSelector<StateInterface, { name: string; btn: string }>(
+    (state) => ({ name: state.currentOrderNav, btn: state.currentOrderBtn })
   );
   console.log(orderValue);
   return (

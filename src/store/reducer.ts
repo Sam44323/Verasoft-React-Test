@@ -60,6 +60,9 @@ const reducer = (
     case actionTypes.FETCH_USER_SUMMARY:
       return { ...state };
 
+    case actionTypes.TOGGLE_ORDER_BTN:
+      return { ...state, currentOrderBtn: actions.btnName as string };
+
     default:
       return { ...state };
   }
