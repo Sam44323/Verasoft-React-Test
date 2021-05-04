@@ -1,0 +1,11 @@
+.noItemContainer {
+  width: 100%;
+  height: 200px;
+  background-color: #fafafa;
+  text-align: center;
+  padding: 72px 0px;
+  font-family: "Open Sans";
+  color: #cccccc;
+  font-size: 21px;
+  font-weight: 300;
+}

@@ -10,7 +10,7 @@
   font-weight: bold;
 }
 
-.buttonSection:focus {
+.activeBtn {
   background-color: #3a3a3a;
   color: white;
 }

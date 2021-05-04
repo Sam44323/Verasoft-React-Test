@@ -20,7 +20,7 @@ export interface SummaryInterface {
   };
 }
 
-interface Order {
+export interface Order {
   id: number;
   order_id: number;
   sent_dt: string;
@@ -32,7 +32,7 @@ interface Order {
   type: string;
 }
 
-interface Orders {
+export interface Orders {
   orders_A: [];
   orders_AA: [];
   orders_AAA: {
@@ -44,14 +44,18 @@ interface Orders {
 
 export interface StateInterface {
   summary: SummaryInterface;
-  orders: Orders;
+  orders: { sent?: Order[] | undefined; error?: Order[] | undefined };
   error: string;
-  currentOrderNav: string;
+  currentOrderNav: number;
   currentOrderBtn: string;
+  loading: boolean;
 }
 
 export interface ActionInterface {
   type: string;
-  order?: string;
+  order?: Orders;
   btnName?: string;
+  data?: any;
+  error?: any;
+  name?: any;
 }

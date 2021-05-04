@@ -1,5 +1,6 @@
-import { StateInterface, ActionInterface } from "../utils/interfaces";
+import { StateInterface, ActionInterface, Orders } from "../utils/interfaces";
 import * as actionTypes from "./actions/actionTypes";
+import { Order } from "../utils/interfaces";
 
 const initialState: StateInterface = {
   summary: {
@@ -24,29 +25,59 @@ const initialState: StateInterface = {
     },
   },
   orders: {
-    orders_A: [],
-    orders_AA: [],
-    orders_AAA: {
-      sent: [
-        {
-          id: 0,
-          order_id: 0,
-          sent_dt: "",
-          sent_tm: "",
-          subject: {
-            title: "",
-            email: "",
-          },
-          type: "",
+    sent: [
+      {
+        id: 0,
+        order_id: 0,
+        sent_dt: "",
+        sent_tm: "",
+        subject: {
+          title: "",
+          email: "",
         },
-      ],
-    },
-    orders_B: [],
-    orders_C: [],
+        type: "",
+      },
+    ],
+    error: [
+      {
+        id: 0,
+        order_id: 0,
+        sent_dt: "",
+        sent_tm: "",
+        subject: {
+          title: "",
+          email: "",
+        },
+        type: "",
+      },
+    ],
   },
   error: "",
-  currentOrderNav: "ORDER A",
-  currentOrderBtn: "SENT",
+  currentOrderNav: 3,
+  currentOrderBtn: "sent",
+  loading: false,
+};
+
+const getOrder = (orders: Orders, nav: number) => {
+  switch (nav) {
+    case 1:
+      return orders.orders_A;
+
+    case 2:
+      return orders.orders_AA;
+
+    case 3:
+      return orders.orders_AAA;
+
+    case 4:
+      return orders.orders_B;
+
+    case 5:
+      return orders.orders_C;
+
+    default:
+      return;
+  }
 };
 
 const reducer = (
@@ -54,14 +85,63 @@ const reducer = (
   actions: ActionInterface
 ): StateInterface => {
   switch (actions.type) {
-    case actionTypes.FETCH_ORDER_SUMMARY:
-      return { ...state, currentOrderNav: actions.order as string };
+    case actionTypes.FETCH_ORDER_SUMMARY_ASYNC:
+      let order: {
+        sent?: Order[];
+        error?: Order[];
+      };
+      const data = getOrder(actions.order as Orders, state.currentOrderNav);
+      if (Array.isArray(data)) {
+        order = {
+          sent: [
+            {
+              id: 0,
+              order_id: 0,
+              sent_dt: "",
+              sent_tm: "",
+              subject: {
+                title: "",
+                email: "",
+              },
+              type: "",
+            },
+          ],
+          error: [
+            {
+              id: 0,
+              order_id: 0,
+              sent_dt: "",
+              sent_tm: "",
+              subject: {
+                title: "",
+                email: "",
+              },
+              type: "",
+            },
+          ],
+        };
+      } else {
+        order = data as { sent?: Order[]; error: Order[] };
+      }
+      return { ...state, orders: order };
 
-    case actionTypes.FETCH_USER_SUMMARY:
-      return { ...state };
+    case actionTypes.FETCH_USER_SUMMARY_ASYNC:
+      return { ...state, summary: actions.data.data, loading: false };
 
     case actionTypes.TOGGLE_ORDER_BTN:
       return { ...state, currentOrderBtn: actions.btnName as string };
+
+    case actionTypes.SET_ORDER_NAV:
+      return { ...state, currentOrderNav: actions.name as number };
+
+    case actionTypes.START_FETCHING:
+      return { ...state, loading: true };
+
+    case actionTypes.END_FETCHING:
+      return { ...state, loading: false };
+
+    case actionTypes.ERROR_EXIST:
+      return { ...state, error: actions.error.message };
 
     default:
       return { ...state };

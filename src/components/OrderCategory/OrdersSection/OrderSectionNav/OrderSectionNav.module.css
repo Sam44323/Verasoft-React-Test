@@ -16,7 +16,7 @@
   margin-left: 10px;
 }
 
-.buttonSection button:focus {
+.buttonSection .activeBtn {
   background-color: white;
 }
 

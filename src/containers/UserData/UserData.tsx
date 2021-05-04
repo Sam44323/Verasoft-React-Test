@@ -1,6 +1,7 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { StateInterface, SummaryInterface } from "../../utils/interfaces";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { StateInterface } from "../../utils/interfaces";
+import * as actionCreators from "../../store/actions/actionCreator";
 
 import styles from "./UserData.module.css";
 
@@ -9,13 +10,19 @@ import PersonalData from "../../components/ProfileNav/PersonalData/PersonalData"
 import ComActivity from "../../components/ProfileNav/ComActivity/ComActivity";
 import SMSCarrier from "../../components/ProfileNav/SMSCarrier/SMSCarrier";
 import Header from "../../components/Header/Header";
+import Modal from "../../UI-Components/Modal/Modal";
 
 const RootContainer: React.FC = () => {
-  const summary = useSelector<StateInterface, SummaryInterface>(
-    (state) => state.summary
-  );
+  const dispatch = useDispatch();
+  const state = useSelector<StateInterface, StateInterface>((state) => state);
+  const { summary, loading } = state;
+
+  useEffect(() => {
+    dispatch(actionCreators.fetchUserSummaryStart());
+  }, [dispatch]);
   return (
     <>
+      {loading ? <Modal /> : null}
       <Header fName={summary.first_name} lName={summary.last_name} />
       <div className={styles.UserDataNavContainer}>
         <ProfilePic gender={summary.gender} />
