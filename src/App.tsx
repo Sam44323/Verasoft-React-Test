@@ -8,7 +8,7 @@ import Modal from "./UI-Components/Modal/Modal";
 function App() {
   return (
     <>
-      <Modal />
+      {/* <Modal /> */}
       <div className="container">
         <UserData />
         <OrderContainer />

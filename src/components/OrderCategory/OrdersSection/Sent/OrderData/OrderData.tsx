@@ -12,7 +12,11 @@ const OrderData: React.FC<{
   type: string;
 }> = (props) => {
   return (
-    <div className={styles.sentContainer}>
+    <div
+      className={
+        props.id % 2 !== 0 ? styles.sentContainer : styles.sentContainerEven
+      }
+    >
       <div className={styles.gridFirst}>
         <div className={styles.detailSection}>
           <h1>{props.sDt}</h1>

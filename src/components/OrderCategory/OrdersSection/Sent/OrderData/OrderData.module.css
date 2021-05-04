@@ -1,9 +1,14 @@
-.sentContainer {
+.sentContainer,
+.sentContainerEven {
   display: grid;
   column-gap: 24px;
   border-bottom: 1px solid #95989a;
   padding-bottom: 11px;
-  margin-bottom: 12px;
+  padding-top: 12.5px;
+}
+
+.sentContainerEven {
+  background-color: #f2f4f7;
 }
 
 .detailSection,
@@ -18,7 +23,7 @@
 }
 
 .gridSecond {
-  width: 590px;
+  width: 710px;
 }
 
 .gridFirst .detailSection:last-child {
@@ -44,7 +49,7 @@
   text-align: left;
   vertical-align: middle;
   justify-items: center;
-  margin-left: 205px;
+  margin-left: 230px;
   padding-right: 10px;
 }
 
